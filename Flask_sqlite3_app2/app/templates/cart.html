@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <a href="/logout">Logout</a>
+    <a href="/products">products</a>
+    <a href="/cart">cart</a>
+    <h1>Products List </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fruit in cart %}
+                <tr>
+                    <td>{{fruit[1]}}</td>
+                    <td>{{fruit[2]}}</td>
+                    <td>{{fruit[3]}}</td>
+                    <td>
+                        <form action="/remove" method="post">
+                            <input type="hidden" name="id" value="{{ fruit[0] }}">
+                            <input type="submit" value="Remove">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h4>you are login as : {{email}}</h4>
+
+{% endblock  %}

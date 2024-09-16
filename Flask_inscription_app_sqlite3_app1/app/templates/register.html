@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{%block body%}
+
+    <form action='/registrants' method="post">
+        <input type='text'  required name="email" placeholder="enter your email">
+        <input required type='password' name="password" placeholder="enter your password" >
+        <input type="checkbox"  name="agree" required>
+        <label for="agree">I have read and agree to the Privacy Policy</label>
+        <input type='submit' value="Envoyer">
+    </form>{%endblock%}
+

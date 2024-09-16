@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{%block head%} 
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choisir un thème</title>
+<style>
+    div{
+        width : 100%;
+        height : 100%;
+    }
+    div.clair {
+        background-color: white;
+        color: black;
+    }
+    div.sombre {
+        background-color: black;
+        color: white;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+{%endblock%}
+
+{%block body%}
+<div class="{{ theme }}">
+    <div class="container">
+        <h1>Choisissez votre thème de couleur</h1>
+        <p>Thème actuel : {{ theme }}</p>
+        <a href="/set_theme/clair" class="button">Thème Clair</a>
+        <a href="/set_theme/sombre" class="button">Thème Sombre</a>
+        <br><br>
+        <button onclick="window.location.href='/reset_theme'">Réinitialiser le thème</button>
+    </div>
+</div>
+
+{%endblock%}

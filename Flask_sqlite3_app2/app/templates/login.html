@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+    <a href="/products">products</a>
+
+
+{%block body%}
+
+    <form action='/loged' method="post">
+        <input type='text'  required name="email" placeholder="enter your email">
+        <input required type='password' name="password" placeholder="enter your password" >
+        <input type="checkbox"  name="agree" required>
+        <label for="agree">I have read and agree to the Privacy Policy</label>
+        <input type='submit' value="Envoyer">
+    </form>
+    
+    {% if error %}
+        <h1>passwor ot email are incorrect!</h1>
+        <a href="/register">Register</a>
+    
+    {% endif %}
+{%endblock%}
+
+
